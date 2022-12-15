@@ -1,0 +1,83 @@
+:root{
+    --bg: #FAF0DC;
+    --text: #333;
+}
+
+html{
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', 'Monospace';
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+p.error{
+    color: red;
+    visibility: hidden;
+    position: absolute;
+}
+
+#login{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+
+    /* These are for app.js */
+    opacity: 0;
+    transform: scale(.95);
+    transition: all 2.5s;
+}
+
+#login p{
+    font-size: 1.6rem;
+}
+
+#login input,
+#login button{
+    border: none;
+    font-size: 1.4rem;
+    padding: 1.2rem 2.4rem;
+    border-radius: 1.2rem;
+    background-color: white;
+    box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, .2);
+    font-family: 'Montserrat', 'Monospace';
+    transition: all 250ms;
+}
+
+#login button{
+    font-weight: 600;
+}
+
+#login button:hover{
+    box-shadow: 4px 12px 12px 4px rgba(0, 0, 0, .2);
+    transition: all 250ms;
+    cursor: pointer;
+}
+
+#submitAfter{
+    position: absolute;
+    visibility: hidden;
+}
+
+#login button:hover + #submitAfter{
+    visibility: visible;
+    bottom: 0;
+}
+
+#main{
+    visibility: hidden;
+    position: absolute;
+    display: none;
+
+    padding: clamp(1rem, 4vw, 8rem);
+}
